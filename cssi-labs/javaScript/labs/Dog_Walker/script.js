@@ -15,13 +15,16 @@
 // Task 1
 let dogName1 = "Steve";
 let dogType1 = "beagle";
-
+console.log = (dogName1);
+console.log = (dogType1);
 // Complete Task 1 Below
 
 
 
 let dogName2 = "Joe";
 let dogType2 = "bulldog";
+console.log = (dogName2);
+console.log = (dogType2);
 
 // Complete Task 2 Below
 
@@ -29,5 +32,7 @@ let dogType2 = "bulldog";
 
 let dogName = "Lola";
 let dogType = "poodle";
+console.log = (dogName);
+console.log = (dogType);
 
 // Complete Task 3 Below
