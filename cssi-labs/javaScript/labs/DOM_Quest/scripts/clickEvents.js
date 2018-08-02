@@ -13,3 +13,7 @@
 // limitations under the License.
 
 console.log("Running Click Events Script");
+
+let container1 = ['red', 'pink', 'orange'];
+let container = ['box1', 'box2', 'box3'];
+let
