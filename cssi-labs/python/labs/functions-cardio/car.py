@@ -21,3 +21,5 @@ def reverse(string):
     return revstring
 
 print(reverse(string))
+
+#Exercise 3

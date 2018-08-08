@@ -19,9 +19,7 @@ choice = ""
 print("Welcome to the shopping list app!")
 
 shopping_list = [blueberries, gojiberries, raspberries]
-    append[blueberries]
-    append[gojiberries]
-    append[raspberries]
+
 
 while choice.lower() != "e":
     print ("                                          ")
