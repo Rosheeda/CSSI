@@ -40,3 +40,20 @@ content = read_process_data()
 
 # Write your solution below!
 
+word_count = {}
+
+words = content.split(" ")
+
+for word in words:
+    #update the dictionary
+    #where each key is the word and the value is the count
+    if word_count.has_key(word):
+        word_count[word] = word_count[word] + 1
+    else:
+        if word != "": and word not in stop_words:
+            word_count[word] = 1
+
+get_highest_words(word_count,10)
+
+stop_words = get_stop_words()
+if word != "": and word not in stop_words:
