@@ -34,6 +34,13 @@ import webapp2
 import os
 import jinja2
 import random
+from google.appengine.api import urlfetch
+import urllib
+import json
+
+URL = 'https://www.googleapis.com/customsearch/v1?'
+KEY = 'AIzaSyBCpltaCb093fn5aXNDLTQMTMQTsSvkG-Q'
+CX =  '010124631424328446279:duow1al2ajm'
 
 
 def get_fortune():
@@ -67,8 +74,18 @@ class FortuneHandler(webapp2.RequestHandler):
         #astro_sign = request.form.get('user_astrological_sign')
         self.response.write(end_template.render(my_dict))
 
+class SimpleURLFetcher(webapp2.RequestHandler):
+    def get(self):
+        query = 'cat'
+        query_params = {'key': KEY, 'cx': CX, 'q': query}
+        result = urlfetch.fetch(URL + urllib.urlencode(query_params))
+        if result.status_code == 200:
+            self.response.write(result.status_code)
+            self.response.write(result.content)
+        else:
+            self.response.status_code = result.status_code
 
 
 app = webapp2.WSGIApplication([
-    ('/', FortuneHandler)
+    ('/', SimpleURLFetcher),
 ], debug=True)
